@@ -1,10 +1,11 @@
 const discord = require("discord.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const DEV = `WDG`;
 
-const MODEL = "gemini-pro";
-const API_KEY = "AIzaSyCOl8MQBYULgSkiXENppEcOw6do8nFKU4k";
-const BOT_TOKEN = "MTIwNDA4NTU2NTEyMTYyNjEzMg.GGbjvf.bLX5czodTgo147Qx8GQQiEnG06t-LMFYTMtZ04";
-const CHANNEL_IDS = ["983429741178658826", "1204098265906159646"]; // Add your additional channel IDs here
+const MODEL = "gemini-pro"; //Don't change this VALUE
+const API_KEY = "api_key"; // API KEY of Google Gemini pro ai
+const BOT_TOKEN = "bot_token"; // Token of Discord Bot
+const CHANNEL_IDS = ["channel_ID_1", "channel_ID_2"]; // Add your channel IDs here where you want chat with bot
 
 const ai = new GoogleGenerativeAI(API_KEY);
 const model = ai.getGenerativeModel({ model: MODEL });
@@ -14,7 +15,8 @@ const client = new discord.Client({
 });
 
 client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}`);
+    console.log(` ❤️ ${DEV} ❤️ `);
+    console.log(`Logged in as 🤖 ${client.user.tag} 🤖`);
 });
 
 client.login(BOT_TOKEN);
